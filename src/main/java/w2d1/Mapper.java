@@ -14,15 +14,13 @@ public class Mapper {
     pairs.add(pair);
   }
 
-  public void sortPair() {
-    pairs.sort(Pair::compareTo);
+  public List<Pair> getPairs() {
+    return pairs;
   }
 
   @Override
   public String toString() {
     String str = "";
-
-    sortPair();
 
     for(Pair p : pairs) {
       str += p;

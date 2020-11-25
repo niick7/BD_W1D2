@@ -15,6 +15,7 @@ public class Application {
 
   public static void main(String[] args) {
     Mapper mapper = new Mapper();
+    WordCountW1D2 w1d2 = new WordCountW1D2(mapper);
     try {
       File file = new File(fileName);
       Scanner scanner = new Scanner(file);
@@ -27,7 +28,14 @@ public class Application {
             mapper.addPairFromKey(word);
         }
       }
-      System.out.println(mapper);
+      w1d2.createGroupByPairs(); // set reducer
+      System.out.println("### Mapper Output ###");
+      System.out.println(mapper + "\n\n");
+      System.out.println("### Reducer Input ###");
+      w1d2.printGroupByPair();
+      System.out.println("\n\n");
+      System.out.println("### Reducer Output ###");
+      w1d2.sumValueByPairKey();
     }
     catch(FileNotFoundException e) {
       System.out.println(fileExceptionMessage);
