@@ -11,10 +11,6 @@ public class Reducer {
     this.groupByPairs = groupByPairs;
   }
 
-  public List<Pair> getPairs() {
-    return pairs;
-  }
-
   public List<GroupByPair> getGroupByPairs() {
     return groupByPairs;
   }

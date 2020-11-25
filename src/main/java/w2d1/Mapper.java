@@ -6,7 +6,7 @@ import java.util.List;
 public class Mapper {
   List<Pair> pairs;
   public Mapper() {
-    this.pairs = new ArrayList<Pair>();
+    this.pairs = new ArrayList<>();
   }
 
   public void addPairFromKey(String key) {

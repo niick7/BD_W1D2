@@ -1,7 +1,7 @@
 package w2d1;
 
 public class Pair {
-  private String key;
+  private final String key;
   private int value = 1;
 
   public Pair(String key) {
