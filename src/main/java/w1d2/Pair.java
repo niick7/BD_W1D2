@@ -1,4 +1,4 @@
-package w2d1;
+package w1d2;
 
 public class Pair {
   private final String key;

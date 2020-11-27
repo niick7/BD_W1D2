@@ -1,4 +1,4 @@
-package w2d1;
+package w1d2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
