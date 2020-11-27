@@ -35,7 +35,7 @@ public class WordCountW1D2 {
         groupByPair.addValue(pair.getValue());
       }
     }
-    this.reducer = new Reducer(sortPair(), groupByPairs);
+    this.reducer = new Reducer(groupByPairs);
   }
 
   public void printGroupByPair() {
