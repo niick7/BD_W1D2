@@ -8,9 +8,7 @@ public class WordCountW1D2 {
   Mapper mapper;
   Reducer reducer;
 
-  public WordCountW1D2(Mapper mapper) {
-    this.mapper = mapper;
-  }
+  public WordCountW1D2() {}
 
   public List<Pair> sortPair() {
     List<Pair> pairs = mapper.getPairs();
@@ -18,7 +16,7 @@ public class WordCountW1D2 {
     return pairs;
   }
 
-  public void createGroupByPairs() {
+  public List<GroupByPair> createGroupByPairs() {
     List<GroupByPair> groupByPairs = new ArrayList<>();
     String tempKey = "";
     GroupByPair tempGroupByPair = new GroupByPair(tempKey);
@@ -35,25 +33,9 @@ public class WordCountW1D2 {
         groupByPair.addValue(pair.getValue());
       }
     }
-    this.reducer = new Reducer(groupByPairs);
+    return groupByPairs;
   }
 
-  public void printGroupByPair() {
-    for(GroupByPair g : this.reducer.getGroupByPairs()) {
-      System.out.println(g);
-    }
-  }
-
-  public void sumValueByPairKey() {
-    List<Pair> pairs = new ArrayList<>();
-    for(GroupByPair g : this.reducer.getGroupByPairs()) {
-      Pair pair = new Pair(g.getKey());
-      pairs.add(pair);
-      pair.setValue(g.getValues().size());
-    }
-
-    for(Pair p : pairs) {
-      System.out.println(p);
-    }
-  }
+  public void setMapper(Mapper mapper) { this.mapper = mapper; }
+  public void setReducer(Reducer reducer) { this.reducer = reducer; }
 }
